@@ -1,2 +1,2 @@
-# pythoncourse
+# The Python Course
 Python Assignments
