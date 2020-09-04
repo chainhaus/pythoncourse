@@ -1,300 +1,239 @@
 '''
-Assignment #1
+Assignment #2
 
 1. Add / modify code ONLY between the marked areas (i.e. "Place code below")
-2. Run the associated test harness for a basic check on completeness. A successful run of the test cases does not guarantee accuracy or fulfillment of the requirements. Please do not submit your work if test cases fail.
+2. Run the associated test harness for a basic check on completeness. A successful run of the test cases does not 
+    guarantee accuracy or fulfillment of the requirements. Please do not submit your work if test cases fail.
 3. To run unit tests simply use the below command after filling in all of the code:
-    python 01_assignment.py
+    python 07_assignment.py
   
 4. Unless explicitly stated, please do not import any additional libraries but feel free to use built-in Python packages
 5. Submissions must be a Python file and not a notebook file (i.e *.ipynb)
-6. Do not use global variables
-7. Make sure your work is committed to your master branch
+6. Do not use global variables unless stated to do so
+7. Make sure your work is committed to your master branch in Github
 
+
+Installation requirements:
+
+1. Please install numpy: pip install numpy
 
 '''
 import math
 import unittest
-
-
-def exercise_example():
-    # Create a variable y and set it to 5.
-
-    # ------ Place code below here \/ \/ \/ ------
-
-    y = 5  # Example of code you would add
-
-    # ------ Place code above here /\ /\ /\ ------
-    return y
-
+import numpy as np
+import requests as r
 
 def exercise01():
-    # Create a variable x and set it to 5.
+    # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
 
     # ------ Place code below here \/ \/ \/ ------
 
+
     # ------ Place code above here /\ /\ /\ ------
 
-    return x
+    return animals
 
 
 def exercise02():
-    # Create a string variable called name and set it to your first name.
+    # Repeat exercise 1 and loop through and print each item in the animal list by iterating through an index number and using range(). Set the variable len_animals to the length of the animal list.
 
     # ------ Place code below here \/ \/ \/ ------
 
+
     # ------ Place code above here /\ /\ /\ ------
 
-    return name
+    return animals, len_animals
 
 
 def exercise03():
-    # Create a string variable called sentence and assign it to an arbitrary sentence that contains at least 3 words
+    # Programmatically reorganize the countdown list below in descending order and return the value of the 5th element in the sorted countdown list.
+    # The 5th element will be stored in the variable the_fifth_element, which currently below has a dummy value of -999.
+    # Remember, the index number of the 5th element is not 5
+    
+    countdown = [9, 8, 7, 5, 4, 2, 1, 6, 10, 3, 0, -5]
+    the_fifth_element = -999
 
     # ------ Place code below here \/ \/ \/ ------
 
+
     # ------ Place code above here /\ /\ /\ ------
 
-    return sentence
+    return countdown, the_fifth_element
 
 
-def exercise04():
-    # Create two string variables. The first variable is called first_name, the second is last_name. Set both variables to your first name and last name respectively.
+def exercise04(more_temperatures, iot_sensor_points, a, b, c, d, e):
+    # This exercise function receives a list of temperatures and a dictionary of temperature data where the key is an arbitrary sequential number and the value is the temperature and a,b,c,d and e are each a single temperature reading
+    # To Do:
+    # 1. Add all of the items in more_temperatures to the temperatures list
+    # 2. Add all of the temperature values in iot_sensor_points to the temperatures list
+    # 3. Add a,b,c,d and e to the temperature list
+    # 4. Organize the temperatures in descending order
+    # 5. The samples list will contain every 5th reading from the final temperatures list i.e in list [1,2,3,4,5,6,7,8,9,10] samples would be [5,10]
+    # 6. Do a shallow copy of samples into copy_of_samples
+    # 7. Organize samples in ascending order
+
+    temperatures = list(np.random.randint(-25, 25, size=10))
+    samples = []
+    copy_of_samples = []
 
     # ------ Place code below here \/ \/ \/ ------
 
+
+
     # ------ Place code above here /\ /\ /\ ------
 
-    return first_name, last_name
+    return samples, temperatures, more_temperatures, iot_sensor_points, a, b, c, d, e, copy_of_samples
 
 
-def exercise05():
-
-    # Repeate exercise 4 here and assign the datatype of the variable first_name to a variable called name_type
+def exercise05(n):
+    # This function will find n factorial using recursion (calling itself) and return the solution. For example exercise05(5) will return 120. No Python functions are to be used.
 
     # ------ Place code below here \/ \/ \/ ------
 
+    pass # Remove this line
+
     # ------ Place code above here /\ /\ /\ ------
 
-    return first_name, last_name, name_type
 
-
-def exercise06():
-    # Assign 20 to the variable hours_worked, 15 to the variable wage_per_hour and the product of the two to variable total_pay
+def exercise06(n):
+     # This function will receive an arbitrary list of numbers of arbitrary size and find the average of those numbers. The size of the list may vary. Find the method that requires the  least amount of code. Return back the length, sum of list and average of list
 
     # ------ Place code below here \/ \/ \/ ------
 
-    # ------ Place code above here /\ /\ /\ ------
-    return hours_worked, wage_per_hour, total_pay
-
-
-def exercise07():
-    # Create a variable wage and assign 17.0 to it. Print to the screen the datatype of wage. Create a second variable called doubled that prints to the screen 2 times wage
-    # ------ Place code below here \/ \/ \/ ------
 
     # ------ Place code above here /\ /\ /\ ------
-    return wage, doubled
+    return length_n, sum_n, average_n
 
 
-def exercise08():
-    # Assign 5 to the variable quantity, 'hello' to the variable hello and a variable hello_repeated that holds a string that contains whatever is contained in the variable hello repeated quantity times
+def exercise07(n):
+    # This function looks for duplicates in list n. If there is a duplicate True is returned. If there are no duplicates False is returned.
 
     # ------ Place code below here \/ \/ \/ ------
 
+
     # ------ Place code above here /\ /\ /\ ------
 
-    return quantity, hello, hello_repeated
 
+# ------ Place code below here \/ \/ \/ ------
+
+def exercise08(s):
+    # This function receives a string. The string should be casted to an int and then a float and returns each separately
+
+    return int_s, float_s
+
+# ------ Place code above here /\ /\ /\ ------
 
 def exercise09():
-    # Assign 10 to a variable qty, 5 to a variable price and the product of the two to a variable total_cost
+    # Compile a list of 11 random URLs of dog pics. You will simply APPEND the dogs list with URLs of pics so that the list contains 11 URLs. This means you will extract the URL and insert into the list dogs.
 
+    dogs = []
+    url = 'https://random.dog/woof.json'
+    dog_media = r.get(url=url)
+    print(str(dog_media.content))
+    
     # ------ Place code below here \/ \/ \/ ------
+    
+
 
     # ------ Place code above here /\ /\ /\ ------
 
-    return qty, price, total_cost
+    return dogs
 
+def exercise10(sentence):
 
-def exercise10():
-    # Create 5 variables named factorN where N is the numbers 1 to 5 and set them to 1 through 5, respectively. Create a variable called product that holds the product of the 5 variables
-
-    # ------ Place code below here \/ \/ \/ ------
-
-    # ------ Place code above here /\ /\ /\ ------
-
-    return factor1, factor2, factor3, factor4, factor5, product
-
-
-def exercise11():
-    # Create a variable pi and literally set it to pi 10 decimal places out. Please literally means just an assignment, no calc is required.
+    # Exercise10 receives an arbitrary string. Return the sentence backwards with the cases inverted and spaces an underscore _, i.e. HelLo returns OlLEh
+    reversed = ''
 
     # ------ Place code below here \/ \/ \/ ------
+    
+
 
     # ------ Place code above here /\ /\ /\ ------
-    return pi
+    return reversed
 
 
-def exercise12():
-    # Create a variable called x and set it to 10. Then create a variable y that equals to x to the 7th power
 
-    # ------ Place code below here \/ \/ \/ ------
-
-    # ------ Place code above here /\ /\ /\ ------
-    return x, y
-
-
-def exercise13():
-    # Create variables volume_sphere, r. Set r to 7 and calculate the volume of the sphere with r = 7 and assign it to volume_sphere
-
-    pi = 3.14159
-    # ------ Place code below here \/ \/ \/ ------
-
-    # ------ Place code above here /\ /\ /\ ------
-    return pi, r, volume_sphere
-
-
-def exercise14():
-    # Create a variables area, length, height. Set length and height equal to 50 and 10.2 respectively. Assign area to the product of length and height, assign the variable area_type to the datatype of area
-
-    # ------ Place code below here \/ \/ \/ ------
-
-    # ------ Place code above here /\ /\ /\ ------
-    return area, length, height, area_type
-
-
-def exercise15():
-    # Calculate the distance covered by a car moving at 80 miles per hour for 3 hours
-
-    # ------ Place code below here \/ \/ \/ ------
-
-    # ------ Place code above here /\ /\ /\ ------
-
-    return distance, speed_mph, duration
-
-
-def exercise16():
-    # Implement pythogorean thereom and find the length of hypotenuse c given sides a and b. Select any numbers for a and b. Use math.sqrt() for square root.
-
-    # ------ Place code below here \/ \/ \/ ------
-
-    # ------ Place code above here /\ /\ /\ ------
-    return a, b, c
-
-
-# ---------------------- Do not modify code below this line ----------------------
-
-class TestAssignment1(unittest.TestCase):
-
-    def test_exercise1(self):
+class TestAssignment2(unittest.TestCase):
+    def test_exercise01(self):
         print('Testing exercise 1')
-        self.assertEqual(exercise01(), 5)
-
-    def test_exercise2(self):
+        a = exercise01()
+        self.assertEqual(len(a), 5)
+        self.assertTrue('cat' in a)
+        self.assertTrue('dog' in a)
+        self.assertTrue('manta ray' in a)
+    
+    def test_exercise02(self):
         print('Testing exercise 2')
-        self.assertTrue(isinstance(exercise02(), str))
-        self.assertGreater(len(exercise02()), 1)
+        a, l = exercise02()
+        self.assertEqual(len(a), 5)
+        self.assertEqual(l, 5)
+        self.assertTrue('cat' in a)
+        self.assertTrue('dog' in a)
+        self.assertTrue('manta ray' in a)
 
-    def test_exercise3(self):
+    def test_exercise03(self):
         print('Testing exercise 3')
-        words = exercise03().split(' ')
-        self.assertGreater(len(words), 2)
+        c, tfe = exercise03()
+        self.assertEqual(c[0], 10)
+        self.assertEqual(c[11], -5)
+        self.assertEqual(len(c), 12)
+        self.assertEqual(tfe, 6)
 
-    def test_exercise4(self):
+    def test_exercise04(self):
         print('Testing exercise 4')
-        f, l = exercise04()
-        self.assertTrue(isinstance(f, str))
-        self.assertGreater(len(f), 0)
-        self.assertTrue(isinstance(l, str))
-        self.assertGreater(len(l), 0)
+        more_temperatures = np.random.randint(300, 400, size=25)
+        iot_sensor_points = {1: 801, 2: 644, 3: 991, 4: 721,
+                             5: 752, 6: 871, 7: 991, 8: 1023, 9: 804, 10: 882}
+        samples, temperatures, more_temperatures, iot_sensor_points, a, b, c, d, e, copy_of_samples = exercise04(more_temperatures, iot_sensor_points,
+                                                                                                                 8000, 8500, 9000, 9500, 9999)
 
-    def test_exercise5(self):
+        self.assertEqual(len(temperatures), 50)
+        self.assertEqual(len(samples), 10)
+        self.assertEqual(temperatures[0], 9999)
+        self.assertEqual(temperatures[11], 801)
+        self.assertEqual(samples[9], 8000)
+        self.assertEqual(copy_of_samples[0], 8000)
+        self.assertEqual(a, 8000)
+        self.assertEqual(b, 8500)
+        self.assertEqual(c, 9000)
+        self.assertEqual(d, 9500)
+        self.assertEqual(e, 9999)
+
+    def test_exercise05(self):
         print('Testing exercise 5')
-        f, l, nt = exercise05()
-        self.assertTrue(isinstance(f, str))
-        self.assertGreater(len(f), 0)
-        self.assertTrue(isinstance(l, str))
-        self.assertGreater(len(l), 0)
-        self.assertTrue(isinstance(nt, type))
+        self.assertEqual(exercise05(5), 120)
+        self.assertEqual(exercise05(10), 3628800)
 
-    def test_exercise6(self):
+    def test_exercise06(self):
         print('Testing exercise 6')
-        h, w, p = exercise06()
-        self.assertTrue(isinstance(h, int))
-        self.assertTrue(isinstance(w, int))
-        self.assertTrue(isinstance(p, int))
-        self.assertEqual(h, p/w)
+        length_n, sum_n, average_n = exercise06([1, 2, 3, 4, 5])
+        self.assertEqual(average_n, 3)
+        self.assertEqual(length_n, 5)
+        length_n, sum_n, average_n = exercise06([1, 2, 120])
+        self.assertEqual(average_n, 41)
+        self.assertEqual(length_n, 3)
 
-    def test_exercise7(self):
+    def test_exercise07(self):
         print('Testing exercise 7')
-        w, d = exercise07()
-        self.assertTrue(isinstance(w, float))
-        self.assertTrue(isinstance(d, float))
-        self.assertEqual(w, 17.0)
-
-    def test_exercise8(self):
-        print('Testing exercise 8')
-        q, h, hr = exercise08()
-        self.assertTrue(isinstance(q, int))
-        self.assertTrue(isinstance(h, str))
-        self.assertTrue(isinstance(hr, str))
-        self.assertEqual(hr, 'hellohellohellohellohello')
-
-    def test_exercise9(self):
+        self.assertTrue(exercise07([1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == True)
+        self.assertTrue(exercise07([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == False)
+        self.assertTrue(exercise07([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]) == True)
+        self.assertTrue(exercise07([1, 2.00002, 2.00001, 4, 5, 6, 7, 8, 9, 10]) == False)
+    
+    def test_exercise09(self):
         print('Testing exercise 9')
-        q, p, tc = exercise09()
-        self.assertTrue(isinstance(q, int))
-        self.assertTrue(isinstance(p, int))
-        self.assertTrue(isinstance(tc, int))
-        self.assertEqual(q, tc/p)
+        dogs = exercise09()
+        for d in dogs:
+            print(d)
+        self.assertTrue('https://random.dog/' in d)
+            
 
     def test_exercise10(self):
         print('Testing exercise 10')
-        f1, f2, f3, f4, f5, p = exercise10()
-        self.assertEqual(f1, 1)
-        self.assertEqual(f2, 2)
-        self.assertEqual(f3, 3)
-        self.assertEqual(f4, 4)
-        self.assertEqual(f5, 5)
-        self.assertEqual(p, 120)
+        self.assertEqual(exercise10('HellO'),'oLLEh')
+        self.assertEqual(exercise10('ThIs Is MaD'),'dAm_Si_SiHt')
 
-    def test_exercise11(self):
-        print('Testing exercise 11')
-        p = exercise11()
-        self.assertEqual(p, 3.1415926535)
 
-    def test_exercise12(self):
-        print('Testing exercise 12')
-        x, y = exercise12()
-        self.assertEqual(x, 10)
-        self.assertEqual(y, 10000000)
-
-    def test_exercise13(self):
-        print('Testing exercise 13')
-        p, r, vs = exercise13()
-        self.assertLess(vs, 1436.8)
-        self.assertGreater(vs, 1436.7)
-        self.assertEqual(r, 7)
-        self.assertEqual(p, 3.14159)
-
-    def test_exercise14(self):
-        print('Testing exercise 14')
-        a, l, h, at = exercise14()
-        self.assertGreater(a, 509)
-        self.assertLess(a, 510)
-        self.assertEqual(l, 50)
-        self.assertEqual(h, 10.2)
-        self.assertTrue(isinstance(at, type))
-
-    def test_exercise15(self):
-        print('Testing exercise 15')
-        di, s, du = exercise15()
-        self.assertEqual(s, 80)
-        self.assertEqual(du, 3)
-        self.assertEqual(s, di / du)
-
-    def test_exercise16(self):
-        print('Not testing exercise 16')
 
 
 if __name__ == '__main__':
