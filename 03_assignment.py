@@ -36,7 +36,9 @@ def exercise01():
     '''
         Create an immutable class Box that has private attributes length and width that takes values for length and width upon construction (instantiation via the constructor). Make sure to use Python 3 semantics. Make sure the length and width attributes are private and accessible only via getters. Immutable here means that any change to its internal state results in a new Box being returned.
         
-        Remember, here immutable means there are no setter methods. States can change with the methods required below i.e. combine(), invert().
+        Remember, here immutable means there are no setter methods. States can change with the methods required below i.e. combine(), invert(). So for 
+        example if s1 is an instance of Square and you call s1.expand(1), the expand method will return a new instance of Square with the 
+        new state instead of modifying the internal state of s1
         
         In addition, create...
         - A method called render() that prints out to the screen a box made with asterisks of length and width dimensions
