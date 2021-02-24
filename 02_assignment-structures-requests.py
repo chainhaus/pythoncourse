@@ -22,6 +22,7 @@ import math
 import unittest
 import numpy as np
 import requests as r
+import json
 
 def exercise01():
     # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
@@ -125,7 +126,7 @@ def exercise08(s):
 
 def exercise09():
     # Compile a list of 11 random URLs of dog pics. You will simply APPEND the dogs list with URLs of pics so that the list contains 11 URLs. This means you will extract the URL and insert into the list dogs.
-
+    # In the end, you will have a list called dogs that will have 11 items in it. Each item is a string, each string contains a random URL to a dog pic. The source of one dog pic URL is one r.get call. You will make 11 calls to receive 11 random dog pic URLs.
     dogs = []
     url = 'https://random.dog/woof.json'
     dog_media = r.get(url=url)
