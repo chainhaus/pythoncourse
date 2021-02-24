@@ -22,7 +22,6 @@ import math
 import unittest
 import numpy as np
 import requests as r
-import json
 
 def exercise01():
     # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
