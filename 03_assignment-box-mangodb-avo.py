@@ -162,7 +162,7 @@ class TestAssignment3(unittest.TestCase):
         self.assertEqual(b3.get_length(),5)
         self.assertEqual(b2.get_hypot(),10)
         self.assertEqual(b1.double().get_length(),32)
-        self.assertEqual(b1.double().get_width(),56)
+        self.assertEqual(b1.double().get_width(),112)
         self.assertTrue(6 in b2.get_dim())
         self.assertTrue(8 in b2.get_dim())
         self.assertTrue(b2.combine(Box(1,1))==Box(7,9))
