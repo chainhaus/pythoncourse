@@ -34,13 +34,11 @@ import csv, json, math, pandas as pd, requests, unittest, uuid
 def exercise01():
 
     '''
-        Create an immutable class Box that has private attributes length and width that takes values for length and width upon construction (instantiation via the constructor). Make sure to use Python 3 semantics. Make sure the length and width attributes are private and accessible only via getters. Immutable here means that any change to its internal state results in a new Box being returned.
+        Create an immutable class Box that has private attributes length and width that takes values for length and width upon construction (instantiation via the constructor). Make sure to use Python 3 semantics. Make sure the length and width attributes are private and accessible only via getters. Immutable here means that any change to its internal state results in a new Box being returned. This means there are no setter methods and any time the internal state (length or width) is modified, a new Box is created containing the modified values.
+
+        Good article on immutability: https://towardsdatascience.com/https-towardsdatascience-com-python-basics-mutable-vs-immutable-objects-829a0cb1530a
         
-        Remember, here immutable means there are no setter methods. States can change with the methods required below i.e. combine(), invert(). So for 
-        example if s1 is an instance of Square and you call s1.expand(1), the expand method will return a new instance of Square with the 
-        new state instead of modifying the internal state of s1
-        
-        In addition, create...
+        In addition, create:
         - A method called render() that prints out to the screen a box made with asterisks of length and width dimensions
         - A method called invert() that switches length and width with each other
         - Methods get_area() and get_perimeter() that return appropriate geometric calculations
@@ -55,9 +53,9 @@ def exercise01():
         - Instantiate 3 boxes of dimensions 5,10 , 3,4 and 5,10 and assign to variables box1, box2 and box3 respectively 
         - Print dimension info for each using print_dim()
         - Evaluate if box1 == box2, and also evaluate if box1 == box3, print True or False to the screen accordingly
-        - Combine box3 into box1 (i.e. box1.combine())
-        - Double the size of box2
-        - Combine box2 into box1
+        - Combine box3 into box1 (i.e. box1.combine()) creating box4
+        - Double the size of box2 creating box5
+        - Combine box5 into box4 creating box6
         - Using a for loop, iterate through and print the tuple received from calling box2's get_dim()
         - Find the size of the diagonal of box2
 
@@ -67,7 +65,7 @@ def exercise01():
 
 
 
-    return box1, box2, box3
+    return box1, box2, box3, box4, box5, box6
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -153,19 +151,29 @@ def exercise03():
 class TestAssignment3(unittest.TestCase):
     def test_exercise01(self):
         print('Testing exercise 1')
-        b1, b2, b3 = exercise01()
-        self.assertEqual(b1.get_length(),16)
-        self.assertEqual(b1.get_width(),28)
-        self.assertTrue(b1==Box(16,28))
-        self.assertEqual(b2.get_length(),6)
-        self.assertEqual(b2.get_width(),8)
+        b1, b2, b3, b4, b5, b6 = exercise01()
+        self.assertEqual(b1.get_length(),5)
+        self.assertEqual(b1.get_width(),10)
+        self.assertEqual(b2.get_length(),3)
+        self.assertEqual(b2.get_width(),4)
         self.assertEqual(b3.get_length(),5)
-        self.assertEqual(b2.get_hypot(),10)
-        self.assertEqual(b1.double().get_length(),32)
-        self.assertEqual(b1.double().get_width(),112)
-        self.assertTrue(6 in b2.get_dim())
-        self.assertTrue(8 in b2.get_dim())
-        self.assertTrue(b2.combine(Box(1,1))==Box(7,9))
+        self.assertEqual(b3.get_width(),10)            
+        self.assertEqual(b4.get_length(),10)
+        self.assertEqual(b4.get_width(),20)        
+        self.assertEqual(b5.get_length(),6)
+        self.assertEqual(b5.get_width(),8)
+        self.assertEqual(b6.get_length(),16)
+        self.assertEqual(b6.get_width(),28)
+        self.assertTrue(b1==Box(5,10))
+        self.assertEqual(b2.get_hypot(),5.0)
+        self.assertEqual(b1.double().get_length(),10)
+        self.assertEqual(b1.double().get_width(),20)
+        self.assertTrue(3 in b2.get_dim())
+        self.assertTrue(4 in b2.get_dim())
+        self.assertTrue(6 in b2.double().get_dim())
+        self.assertTrue(8 in b2.double().get_dim())
+        self.assertTrue(b2.combine(Box(1,1))==Box(4,5))
+        self.assertTrue(b1.invert()==Box(10,5))
 
     def test_exercise02(self):
         print('Testing exercise 2')
