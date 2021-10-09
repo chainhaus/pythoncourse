@@ -34,8 +34,13 @@ import csv, json, math, pandas as pd, requests, unittest, uuid
 def exercise01():
 
     '''
-        Create an immutable class Box that has private attributes length and width that takes values for length and width upon construction (instantiation via the constructor). Make sure to use Python 3 semantics. Make sure the length and width attributes are private and accessible only via getters. Immutable here means that any change to its internal state results in a new Box being returned. This means there are no setter methods and any time the internal state (length or width) is modified, a new Box is created containing the modified values.
-
+        Create an immutable class Box that has private attributes length and width that takes values for length and width
+        upon construction (instantiation via the constructor). Make sure to use Python 3 semantics. Make sure the length
+        and width attributes are private and accessible only via getters. Immutable here means that any change to its internal
+        state results in a new Box being returned. This means there are no setter methods and any time the internal state
+        (length or width) is modified, a new Box is created containing the modified values. 
+        This is applicable to combine(), invert() and double()
+        
         Good article on immutability: https://towardsdatascience.com/https-towardsdatascience-com-python-basics-mutable-vs-immutable-objects-829a0cb1530a
         
         In addition, create:
